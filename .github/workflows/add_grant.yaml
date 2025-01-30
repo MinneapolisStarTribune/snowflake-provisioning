@@ -21,7 +21,7 @@ jobs:
       - uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
           cli-version: "latest"
-          default-config-file-path: ".\config.toml"
+          default-config-file-path: "./config.toml"
 
         # Use the CLI
       - name: Execute Snowflake CLI command
