@@ -31,3 +31,7 @@ jobs:
         run: |
           snow --version
           snow connection test
+
+      - name: Get Users
+        run: |
+          python get_users.py
