@@ -35,7 +35,7 @@ jobs:
         # copy file to stage
       - name: Push json to stage
         run: |
-          snow stage put user_roles.json @test_stage
+          snow stage copy --overwrite user_roles.json @test_stage
 
         # Use the CLI
       - name: Execute Snowflake CLI command
