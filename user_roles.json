@@ -1,13 +1,13 @@
  [
-    {"username": "CALEB.SANTANGELO@STARTRIBUNE.COM", "roles": ["ACCOUNTADMIN"]},
-    {"username": "MATT.SMIGIELSKI@STARTRIBUNE.COM", "roles": ["ACCOUNTADMIN"]},
-    {"username": "MADI.KAVA@STARTRIBUNE.COM", "roles": ["ACCOUNTADMIN"]},
-    {"username": "TOBY.COLLODORA@STARTRIBUNE.COM", "roles": ["FR_DEV_ANALYST"]},
-    {"username": "JASON.JUDICE@STARTRIBUNE.COM", "roles": ["FR_DEV_ANALYST"]},
-    {"username": "EVAN.STEFFEY@STARTRIBUNE.COM", "roles": ["FR_DEV_DATAENGINEER"]},
-    {"username": "BRIAN.PRICHARD@STARTRIBUNE.COM", "roles": ["FR_DEV_DATAENGINEER"]},
-    {"username": "DANA.CHIUEH@STARTRIBUNE.COM", "roles": ["FR_DEV_DATAENGINEER"]},
-    {"username": "GENESIS.QU@STARTRIBUNE.COM", "roles": ["FR_DEV_DATAENGINEER"]},
-    {"username": "EMILY.HOOD@STARTRIBUNE.COM", "roles": ["FR_DEV_REPORTING"]},
-    {"username": "JASON.KLAPMEIER@STARTRIBUNE.COM", "roles": ["SYSADMIN"]}
+    {"username": "CALEB.SANTANGELO@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
+    {"username": "MATT.SMIGIELSKI@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
+    {"username": "MADI.KAVA@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
+    {"username": "TOBY.COLLODORA@STARTRIBUNE.COM", "role": "FR_DEV_ANALYST"},
+    {"username": "JASON.JUDICE@STARTRIBUNE.COM", "role": "FR_DEV_ANALYST"},
+    {"username": "EVAN.STEFFEY@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "BRIAN.PRICHARD@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "DANA.CHIUEH@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "GENESIS.QU@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "EMILY.HOOD@STARTRIBUNE.COM", "role": "FR_DEV_REPORTING"},
+    {"username": "JASON.KLAPMEIER@STARTRIBUNE.COM", "role": "SYSADMIN"}
 ]
