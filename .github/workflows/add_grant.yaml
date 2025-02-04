@@ -41,5 +41,5 @@ jobs:
       - name: Execute Snowflake CLI command
         run: |
           snow --version
-          snow sql -q "call BULK_INSERT_USER_ROLES_JSON(user_roles.json);"
+          snow sql -q "call BULK_INSERT_USER_ROLES_JSON('user_roles.json');"
 
