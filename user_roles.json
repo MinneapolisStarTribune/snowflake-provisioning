@@ -10,6 +10,6 @@
     {"username": "GENESIS.QU@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
     {"username": "EMILY.HOOD@STARTRIBUNE.COM", "role": "FR_DEV_REPORTING"},
     {"username": "JASON.KLAPMEIER@STARTRIBUNE.COM", "role": "SYSADMIN"},
-    {"username": "STEVE.GROVE@STARTRIBUNE.COM", "role": "TESTADMIN"},
-    {"username": "STRIBBY.DUCK@STARTRIBUNE.COM", "role": "TESTADMIN"}
+    {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "STEVE.GROVE@STARTRIBUNE.COM", "role": "FR_DEV_ANALYST"}
 ]

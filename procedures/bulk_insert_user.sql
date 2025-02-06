@@ -27,7 +27,6 @@ BEGIN
         PATTERN => :p_input_filename
     );
 
-
     -- Load JSON data into temp table using the provided stage and filename
     INSERT INTO temp_user_roles (username, role_name)
     SELECT 
@@ -41,10 +40,15 @@ BEGIN
     -- Perform the merge operation
     MERGE INTO ROLE_PROVISIONING AS target
     USING (
-        SELECT DISTINCT 
-            username, 
-            role_name 
-        FROM temp_user_roles
+        SELECT DISTINCT username, role_name FROM temp_user_roles
+        UNION ALL
+        --Make sure we get anything that's been removed from the file
+        SELECT username, role_name FROM role_provisioning_copy 
+        WHERE NOT EXISTS (
+            SELECT 1 FROM temp_user_roles t 
+            WHERE t.username = role_provisioning_copy.username 
+            AND t.role_name = role_provisioning_copy.role_name
+        )
     ) AS source
     ON target.username = source.username 
     AND target.role_name = source.role_name
@@ -60,7 +64,13 @@ BEGIN
             source.role_name, 
             FALSE, 
             CURRENT_TIMESTAMP()
-        );
+        )
+    WHEN MATCHED AND EXISTS (SELECT 1 FROM temp_user_roles t 
+           WHERE t.username = target.username 
+           AND t.role_name = target.role_name) THEN
+    UPDATE SET target.is_revoked = FALSE
+    WHEN MATCHED THEN
+        UPDATE SET target.is_revoked = TRUE;
 
     with inserted_rows as (
         SELECT 

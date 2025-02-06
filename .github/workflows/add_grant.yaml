@@ -38,8 +38,11 @@ jobs:
           snow stage copy --overwrite user_roles.json @test_stage
 
         # Use the CLI
-      - name: Execute Snowflake CLI command
+      - name: Update provisioning table
         run: |
-          snow --version
           snow sql -q "call BULK_INSERT_USER_ROLES_JSON('user_roles.json');"
+
+      - name: Update roles
+        run: |
+          snow sql -q "call PROVISION_PENDING_ROLES();"
 
