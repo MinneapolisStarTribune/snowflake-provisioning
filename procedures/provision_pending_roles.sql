@@ -73,8 +73,10 @@ try {
     // Process each pending revoke
     if (pending_revokes.getRowCount()>0){
         while (pending_revokes.next()) {
-            var username = pending_roles.getColumnValue(1);
-            var role_name = pending_roles.getColumnValue(2);
+            var username = pending_revokes.getColumnValue(1);
+            var role_name = pending_revokes.getColumnValue(2);
+            
+            console.log(`Processing revoke: ${role_name} from ${username}`);
             
             try {
                 // Double quote the username for email addresses
@@ -82,7 +84,7 @@ try {
                     sqlText: `REVOKE ROLE IDENTIFIER(?) FROM USER "${username}"`,
                     binds: [role_name]
                 }).execute();
-                
+
                 // Update the provisioning status using binds
                 var update_stmt_revoke = snowflake.createStatement({
                     sqlText: `
