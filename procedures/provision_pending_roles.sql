@@ -61,7 +61,7 @@ try {
         sqlText: `
             SELECT username, role_name 
             FROM ROLE_PROVISIONING 
-            WHERE is_revoked = FALSE
+            WHERE is_revoked = TRUE
             and revoked_date is NULL;
         `
     }).execute();
