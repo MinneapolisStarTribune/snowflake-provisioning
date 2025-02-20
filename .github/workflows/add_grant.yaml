@@ -1,8 +1,8 @@
-name: deploy
+name: snowflake_provisioning
 on: [push]
 jobs:
   version:
-    name: "Check Snowflake CLI version"
+    name: "Sync users and roles"
     runs-on: ubuntu-latest
     env:
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_AUTHENTICATOR: SNOWFLAKE_JWT
@@ -27,10 +27,6 @@ jobs:
         with:
           cli-version: "latest"
           default-config-file-path: "./config.toml"
-      
-      # - name: Get Users
-      #   run: |
-      #     python get_users.py
 
         # copy file to stage
       - name: Push json to stage
