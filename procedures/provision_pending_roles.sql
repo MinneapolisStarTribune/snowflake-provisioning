@@ -19,9 +19,11 @@ try {
     var roles_granted = 0;
     var roles_revoked = 0;
     var errors = [];
+
+    console.log("Pending roles: " + pending_roles.getRowCount());
     
     // Process each pending role
-    if (pending_roles.getRowCount>0){
+    if (pending_roles.getRowCount()>0){
         while (pending_roles.next()) {
             var username = pending_roles.getColumnValue(1);
             var role_name = pending_roles.getColumnValue(2);
@@ -66,8 +68,10 @@ try {
         `
     }).execute();
 
+    console.log("Pending revokes: " + pending_revokes.getRowCount());
+
     // Process each pending revoke
-    if (pending_revokes.getRowCount>0){
+    if (pending_revokes.getRowCount()>0){
         while (pending_revokes.next()) {
             var username = pending_roles.getColumnValue(1);
             var role_name = pending_roles.getColumnValue(2);
