@@ -1,0 +1,23 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# these users will be requested for review when someone 
+# opens a pull request.
+*       @santaca-strib @MattSmigielski-startribune 
+
+# Order is important; the last matching pattern takes the most
+# precedence. When someone opens a pull request that only
+# modifies files in a specific directory, only the owners
+# for that directory will be requested for review.
+
+# Snowflake database changes
+/database/       @database-team-lead
+*.sql           @database-team-lead
+
+# GitHub Actions workflow files
+/.github/workflows/    @devops-team
+
+# Documentation
+/docs/          @docs-team @tech-writers
+
+# You can also use email addresses if you prefer:
+# /docs/  docs-team@example.com 
