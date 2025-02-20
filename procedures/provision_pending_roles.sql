@@ -75,7 +75,7 @@ try {
             try {
                 // Double quote the username for email addresses
                 var revoke_stmt = snowflake.createStatement({
-                    sqlText: `REVOKE ROLE IDENTIFIER(?) TO USER "${username}"`,
+                    sqlText: `REVOKE ROLE IDENTIFIER(?) FROM USER "${username}"`,
                     binds: [role_name]
                 }).execute();
                 

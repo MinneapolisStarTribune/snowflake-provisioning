@@ -43,15 +43,16 @@ BEGIN
         SELECT DISTINCT username, role_name FROM temp_user_roles
         UNION ALL
         --Make sure we get anything that's been removed from the file
-        SELECT username, role_name FROM role_provisioning_copy 
+        SELECT username, role_name FROM role_provisioning 
         WHERE NOT EXISTS (
             SELECT 1 FROM temp_user_roles t 
-            WHERE t.username = role_provisioning_copy.username 
-            AND t.role_name = role_provisioning_copy.role_name
+            WHERE t.username = role_provisioning.username 
+            AND t.role_name = role_provisioning.role_name
         )
     ) AS source
     ON target.username = source.username 
     AND target.role_name = source.role_name
+    --If the user/role combination is not in the table, insert them
     WHEN NOT MATCHED THEN 
         INSERT (
             username, 
@@ -65,12 +66,13 @@ BEGIN
             FALSE, 
             CURRENT_TIMESTAMP()
         )
-    WHEN MATCHED AND EXISTS (SELECT 1 FROM temp_user_roles t 
+    --If the user/role combination was removed from the file, update their role to be revoked
+    WHEN MATCHED AND NOT EXISTS (SELECT 1 FROM temp_user_roles t 
            WHERE t.username = target.username 
            AND t.role_name = target.role_name) THEN
-    UPDATE SET target.is_revoked = FALSE
+        UPDATE SET target.is_revoked = FALSE, target.last_sync_date = CURRENT_TIMESTAMP();
     WHEN MATCHED THEN
-        UPDATE SET target.is_revoked = TRUE;
+        UPDATE SET target.last_sync_date = CURRENT_TIMESTAMP();
 
     with inserted_rows as (
         SELECT 
