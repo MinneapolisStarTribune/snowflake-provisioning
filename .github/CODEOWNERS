@@ -9,15 +9,3 @@
 # modifies files in a specific directory, only the owners
 # for that directory will be requested for review.
 
-# Snowflake database changes
-/database/       @database-team-lead
-*.sql           @database-team-lead
-
-# GitHub Actions workflow files
-/.github/workflows/    @devops-team
-
-# Documentation
-/docs/          @docs-team @tech-writers
-
-# You can also use email addresses if you prefer:
-# /docs/  docs-team@example.com 
