@@ -1,5 +1,8 @@
 name: snowflake_provisioning
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   version:
     name: "Sync users and roles"
