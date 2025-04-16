@@ -11,5 +11,7 @@
     {"username": "GENESIS.QU@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
     {"username": "EMILY.HOOD@STARTRIBUNE.COM", "role": "FR_DEV_REPORTING"},
     {"username": "JASON.KLAPMEIER@STARTRIBUNE.COM", "role": "SYSADMIN"},
-    {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"}
+    {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
+    {"username": "NICK.GRAF@STARTRIBUNE.COM", "role": "FR_PROD_DATAENGINEER"},
+    {"username": "DAN.EICHHOLZ@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"}
 ]
