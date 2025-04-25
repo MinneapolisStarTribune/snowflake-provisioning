@@ -39,6 +39,6 @@ jobs:
           snow sql -q "call PROVISION_PENDING_ROLES();"
 
       - name: Process task changes
-        if: hashFiles('tasks/**.sql') != ''
+        if: hashFiles('tasks/**') != ''
         run: |
           snow sql -f tasks/add_grant.sql
