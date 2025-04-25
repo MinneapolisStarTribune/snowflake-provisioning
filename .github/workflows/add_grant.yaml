@@ -41,4 +41,5 @@ jobs:
       - name: Process task changes
         if: hashFiles('tasks/**') != ''
         run: |
+          snow sql -q "use role FR_DEV_INGESTION;"
           snow sql -f tasks/add_grant.sql
