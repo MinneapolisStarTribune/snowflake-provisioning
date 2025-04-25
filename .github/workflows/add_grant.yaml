@@ -31,17 +31,14 @@ jobs:
           cli-version: "latest"
           default-config-file-path: "./config.toml"
 
-        # copy file to stage
-      - name: Push json to stage
+      - name: Process user roles updates
+        if: hashFiles('user_roles.json') != ''
         run: |
           snow stage copy --overwrite user_roles.json @test_stage
-
-        # Use the CLI
-      - name: Update provisioning table
-        run: |
           snow sql -q "call BULK_INSERT_USER_ROLES_JSON('user_roles.json');"
-
-      - name: Update roles
-        run: |
           snow sql -q "call PROVISION_PENDING_ROLES();"
 
+      - name: Process task changes
+        if: hashFiles('tasks/**.sql') != ''
+        run: |
+          snow sql -f tasks/add_grant.sql
