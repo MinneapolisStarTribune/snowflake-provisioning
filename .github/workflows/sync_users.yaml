@@ -1,4 +1,4 @@
-name: snowflake_provisioning
+name: snowflake_user_provisioning
 on:
   push:
     branches:
@@ -37,9 +37,3 @@ jobs:
           snow stage copy --overwrite user_roles.json @test_stage
           snow sql -q "call BULK_INSERT_USER_ROLES_JSON('user_roles.json');"
           snow sql -q "call PROVISION_PENDING_ROLES();"
-
-      - name: Process task changes
-        if: hashFiles('tasks/**') != ''
-        run: |
-          snow sql -q "use role FR_DEV_INGESTION;"
-          snow sql -f tasks/add_grant.sql
