@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'users_roles.json'
 jobs:
   version:
     name: "Sync users and roles"

@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'tasks/**'
 jobs:
   version:
     name: "Sync tasks and procedures"
@@ -32,6 +34,5 @@ jobs:
           default-config-file-path: "./config.toml"
 
       - name: Process task changes
-        if: hashFiles('tasks/**') != ''
         run: |
           snow sql -f tasks/test.sql
