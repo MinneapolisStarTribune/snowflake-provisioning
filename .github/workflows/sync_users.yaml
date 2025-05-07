@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'users_roles.json'
+      - 'user_roles.json'
 jobs:
   version:
     name: "Sync users and roles"
