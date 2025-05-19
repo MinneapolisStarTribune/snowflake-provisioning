@@ -30,7 +30,7 @@ jobs:
         # Snowflake CLI installation
       - uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
-          cli-version: "latest"
+          cli-version: "3.7.1"
           default-config-file-path: "./config.toml"
 
       - name: Process user roles updates
