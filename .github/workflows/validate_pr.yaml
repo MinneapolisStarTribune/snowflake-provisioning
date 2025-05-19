@@ -1,10 +1,10 @@
-name: pr-validation
+name: pr_validation
 on:
   pull_request:
-  branches:
-    - main
-  paths:
-    - 'user_roles.json'
+    branches:
+      - main
+    paths:
+      - 'user_roles.json'
 jobs:
   version:
     name: "Sync users and roles"
