@@ -7,7 +7,7 @@ on:
       - 'user_roles.json'
 jobs:
   version:
-    name: "Sync users and roles"
+    name: "Validating Pull Request"
     runs-on: ubuntu-latest
     env:
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_AUTHENTICATOR: SNOWFLAKE_JWT
@@ -32,6 +32,7 @@ jobs:
           cli-version: "latest"
           default-config-file-path: "./config.toml"
 
-      - name: Print PR Message
+      - name: Validate user changes
         run: |
-          echo "This is a pull request - changes will be validated but not applied"
+          snow stage copy --overwrite user_roles.json @test_stage
+          snow sql -q "call VALIDATE_USER_ROLES_JSON('user_roles.json');"
