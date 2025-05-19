@@ -1,3 +1,5 @@
+use role fr_dev_ingestion;
+
 CREATE OR REPLACE PROCEDURE VALIDATE_USER_ROLES_JSON(
     p_input_filename STRING -- Name of the JSON file
 )
@@ -6,7 +8,6 @@ LANGUAGE SQL
 AS
 DECLARE
     result VARIANT;
-    v_file_check VARIANT;
 BEGIN
     -- Create a temporary table to hold parsed JSON data
     CREATE OR REPLACE TEMPORARY TABLE temp_user_roles_validation (
@@ -14,16 +15,15 @@ BEGIN
         role_name VARCHAR(255)
     );
     
-    -- First, let's verify the file exists and get a count of records
-    SELECT OBJECT_CONSTRUCT(
-        'file_records', COUNT(*),
-        'file_exists', IFF(COUNT(*) > 0, TRUE, FALSE)
-    )
-    INTO :v_file_check
-    FROM @test_stage (
-        FILE_FORMAT => 'my_json_format',
-        PATTERN => :p_input_filename
-    );
+    -- -- First, let's verify the file exists and get a count of records
+    -- SELECT OBJECT_CONSTRUCT(
+    --     'file_records', COUNT(*)
+    -- )
+    -- INTO :v_file_check
+    -- FROM @test_stage (
+    --     FILE_FORMAT => 'my_json_format',
+    --     PATTERN => :p_input_filename
+    -- );
     
     -- Load JSON data into temp table using the provided stage and filename
     INSERT INTO temp_user_roles_validation (username, role_name)
@@ -96,7 +96,6 @@ BEGIN
     summary AS (
         SELECT OBJECT_CONSTRUCT(
             'status', 'success',
-            'file_records', v_file_check:file_records,
             'would_be_inserted', (SELECT COUNT(*) FROM new_records),
             'would_be_revoked', (SELECT COUNT(*) FROM revoked_records),
             'validation_issues', (SELECT COUNT(*) FROM validation_issues),
