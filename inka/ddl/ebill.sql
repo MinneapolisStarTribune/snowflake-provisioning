@@ -1,5 +1,5 @@
 CREATE OR REPLACE TABLE
-    "PROD_RAW_DB"."INKA"."ebill" (
+    "PROD_RAW_DB"."INKA"."E_BILLING_NAVIGA" (
         dateExtract TIMESTAMP_NTZ,
         primaryKey VARCHAR,
         SubscriptionID NUMBER (38, 0),

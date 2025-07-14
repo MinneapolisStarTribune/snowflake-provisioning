@@ -1,5 +1,5 @@
 CREATE OR REPLACE TABLE
-    "PROD_RAW_DB"."INKA"."nyt" (
+    "PROD_RAW_DB"."INKA"."NYT_GAMES_BUNDLE" (
         dateExtract TIMESTAMP_NTZ,
         primaryKey VARCHAR,
         email VARCHAR,

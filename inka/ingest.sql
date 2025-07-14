@@ -1,0 +1,16 @@
+INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
+(
+    'MDE',
+    'INKA',
+    'MDE',
+    'INKA_STAGE',
+    'StarTribune_MDE.csv',
+    'INKA_FILE_FORMAT',
+    'FULL_REPLACE',
+    NULL,
+    NULL,
+    NULL,
+    TRUE,
+    CURRENT_TIMESTAMP(),
+    CURRENT_TIMESTAMP()
+)

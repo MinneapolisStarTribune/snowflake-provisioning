@@ -1,5 +1,5 @@
 CREATE OR REPLACE TABLE
-    "PROD_RAW_DB"."INKA"."digreg" (
+    "PROD_RAW_DB"."INKA"."digital_registrations" (
         primaryKey VARCHAR,
         User_ID VARCHAR,
         User_Email VARCHAR,
