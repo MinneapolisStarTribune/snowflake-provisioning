@@ -1,6 +1,25 @@
 INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
 (
+    'MDE_FULL',
+    'INKA',
     'MDE',
+    'INKA_STAGE',
+    'StarTribune_MDE.csv',
+    'INKA_FILE_FORMAT',
+    'FULL_REPLACE',
+    NULL, -- PKs
+    NULL, --- column mapping
+    NULL, --- where clause
+    TRUE,
+    CURRENT_TIMESTAMP(),
+    CURRENT_TIMESTAMP()
+);
+
+--email is unique
+
+INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
+(
+    'MDE_MERGE',
     'INKA',
     'MDE',
     'INKA_STAGE',
@@ -13,4 +32,57 @@ INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES
     TRUE,
     CURRENT_TIMESTAMP(),
     CURRENT_TIMESTAMP()
-)
+);
+
+INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
+(
+    'EBILL_FULL',
+    'INKA',
+    'E_BILLING_NAVIGA',
+    'INKA_STAGE',
+    'SFMC_Import_ebillinfo.csv',
+    'INKA_FILE_FORMAT',
+    'FULL_REPLACE',
+    NULL,
+    NULL,
+    NULL,
+    TRUE,
+    CURRENT_TIMESTAMP(),
+    CURRENT_TIMESTAMP()
+);
+
+-- emails unique for now, but not in the future (use email + startdate)
+
+INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
+(
+    'NYT_FULL',
+    'INKA',
+    'NYT_GAMES_BUNDLE',
+    'INKA_STAGE',
+    'NYT_DE.csv',
+    'INKA_FILE_FORMAT',
+    'FULL_REPLACE',
+    NULL,
+    NULL,
+    NULL,
+    TRUE,
+    CURRENT_TIMESTAMP(),
+    CURRENT_TIMESTAMP()
+);
+
+INSERT INTO PROD_RAW_DB.CONFIGS.INGEST_PARAMETERS VALUES 
+(
+    'DIG_REG_FULL',
+    'INKA',
+    'PIANO_DIGITAL_REGISTRATIONS',
+    'INKA_STAGE',
+    'SFMC_Piano_DigReg.csv',
+    'INKA_FILE_FORMAT',
+    'FULL_REPLACE',
+    NULL,
+    NULL,
+    NULL,
+    TRUE,
+    CURRENT_TIMESTAMP(),
+    CURRENT_TIMESTAMP()
+);

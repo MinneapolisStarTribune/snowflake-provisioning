@@ -1,5 +1,5 @@
 CREATE OR REPLACE TABLE
-    "PROD_RAW_DB"."INKA"."digital_registrations" (
+    "PROD_RAW_DB"."INKA"."PIANO_DIGITAL_REGISTRATIONS" (
         primaryKey VARCHAR,
         User_ID VARCHAR,
         User_Email VARCHAR,
