@@ -17,5 +17,6 @@
     {"username": "NICK.GRAF@STARTRIBUNE.COM", "role": "FR_PROD_DATAENGINEER"},
     {"username": "DAN.EICHHOLZ@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
     {"username": "JUSTIN.JENNISSEN@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
-    {"username": "COOPER.MILLER@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"}
+    {"username": "COOPER.MILLER@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
+    {"username": "LU.XIA@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"}
 ]
