@@ -18,5 +18,13 @@
     {"username": "DAN.EICHHOLZ@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
     {"username": "JUSTIN.JENNISSEN@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
     {"username": "COOPER.MILLER@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
+<<<<<<< Updated upstream
     {"username": "LU.XIA@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"}
+=======
+    {"username": "LU.XIA@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
+    {"username": "PAUL.JOPPA@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
+    {"username": "JASON.UTTLEY@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
+    {"username": "SCOTT.HARVEY@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
+    {"username": "JULIAN.BRADSHAW@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"}
+>>>>>>> Stashed changes
 ]
