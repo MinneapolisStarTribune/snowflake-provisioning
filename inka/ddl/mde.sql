@@ -94,3 +94,5 @@ CREATE OR REPLACE TABLE
         pianoRegisteredTermID VARCHAR,
         pianoRegisteredTermName VARCHAR
     );
+
+ALTER TABLE "PROD_RAW_DB"."INKA"."MDE" SET DATA_RETENTION_TIME_IN_DAYS = 7;
