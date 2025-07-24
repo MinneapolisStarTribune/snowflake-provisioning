@@ -14,7 +14,6 @@
     {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "FR_DEV_DATAENGINEER"},
     {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "DATASCIENCE_USER"},
     {"username": "JULIET.KELSON@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
-    {"username": "NICK.GRAF@STARTRIBUNE.COM", "role": "FR_PROD_DATAENGINEER"},
     {"username": "DAN.EICHHOLZ@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
     {"username": "JUSTIN.JENNISSEN@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
     {"username": "COOPER.MILLER@STARTRIBUNE.COM", "role": "ACCOUNTADMIN"},
@@ -22,5 +21,6 @@
     {"username": "PAUL.JOPPA@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
     {"username": "JASON.UTTLEY@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
     {"username": "SCOTT.HARVEY@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
-    {"username": "JULIAN.BRADSHAW@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"}
+    {"username": "JULIAN.BRADSHAW@STARTRIBUNE.COM", "role": "FR_PROD_REPORTING"},
+    {"username": "ADAM.LADWIG@STARTRIBUNE.COM", "role": "SYSADMIN"}
 ]
